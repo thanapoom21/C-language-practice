@@ -61,6 +61,26 @@ int insert(int pos, int d)
   return 0;
 }
 
+///////////////////////////
+int delete(int pos)
+{
+  struct node *t;
+  if (start == NULL)
+  {
+    printf("\nlist is empty.");
+  }
+
+  else
+  {
+    if (pos == 1)
+    {
+      struct node *p;
+      p == start;
+    }
+  }
+}
+///////////////////////////
+
 static void test()
 {
   insert(2, 9);
