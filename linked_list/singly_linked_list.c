@@ -81,6 +81,26 @@ int delete(int pos)
 }
 ///////////////////////////
 
+void viewlist() // function to display values.
+{
+  struct node *p;
+  if (start == NULL)
+  {
+    printf("\nlist is empty.");
+  }
+  else
+  {
+    p = start;
+    while (p != NULL)
+    {
+      printf("%d", p->info);
+      p = p->link;
+    }
+  }
+}
+
+////
+
 static void test()
 {
   insert(2, 9);
