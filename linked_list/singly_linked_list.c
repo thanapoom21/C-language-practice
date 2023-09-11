@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <assert.h>
 
-typedef struct node
+struct node
 {
   int info;
   struct node *link;
-} vertex;
+};
 
 struct node *start = NULL;
 
@@ -76,9 +76,32 @@ int delete(int pos)
     {
       struct node *p;
       p == start;
+      start = start->link;
+      free(p);
+    }
+    else
+    {
+      struct node *prev = start;
+      for (int i = 2; i < pos; i++)
+      {
+        if (prev == NULL)
+        {
+          printf("Position not found!");
+          return 0;
+        }
+
+        prev = prev->link;
+      }
+
+      struct node *n = prev->link;
+      prev->link = n->link;
+      free(n);
     }
   }
+
+  return 0;
 }
+
 ///////////////////////////
 
 void viewlist() // function to display values.
@@ -99,7 +122,7 @@ void viewlist() // function to display values.
   }
 }
 
-////
+///////////////////////////
 
 static void test()
 {
@@ -109,14 +132,23 @@ static void test()
 
 int main(void)
 {
-  vertex s1;
-  s1.info = 5;
+  int n = 0, pos = 0, p = 0, num = 0, c = 0;
 
-  printf("return nothing first.\n");
+  printf("\n1.self test mode");
+  printf("\n2.interactive mode");
+  printf("\n3.enter your choice:");
+  scanf("%d", &c);
+  if (c == 1)
+  {
+    test();
+  }
+  else if (c == 2)
+  {
 
-  test();
-
-  printf("return %d\n", s1.info);
-
+  }
+  else
+  {
+    printf("Invalid choice.")
+  }
   return 0;
 }
