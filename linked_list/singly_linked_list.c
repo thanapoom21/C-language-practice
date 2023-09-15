@@ -144,11 +144,10 @@ int main(void)
   }
   else if (c == 2)
   {
-
   }
   else
   {
-    printf("Invalid choice.")
+    printf("Invalid choice.");
   }
   return 0;
 }
